@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Poogle v4</title>
+
+<style>
+body { margin:0; background:#1e1e1e; color:white; font-family:Arial; }
+
+#tabs { display:flex; background:#111; padding:5px; overflow-x:auto; }
+.tab { padding:8px; background:#222; margin-right:5px; border-radius:6px; cursor:pointer; }
+.tab.active { background:#555; }
+
+#controls { display:flex; padding:5px; background:#181818; }
+input { flex:1; padding:8px; border:none; outline:none; }
+button { margin-right:5px; }
+
+#bookmarks { background:#111; padding:5px; }
+
+webview { width:100%; height:calc(100vh - 110px); }
+</style>
+</head>
+
+<body>
+
+<div id="tabs"></div>
+
+<div id="controls">
+    <button onclick="back()">◀</button>
+    <button onclick="forward()">▶</button>
+    <button onclick="reload()">⟳</button>
+    <button onclick="newTab()">+</button>
+    <button onclick="bookmark()">⭐</button>
+    <input id="url" onkeydown="go(event)">
+</div>
+
+<div id="bookmarks"></div>
+
+<div id="views"></div>
+
+<script src="renderer.js"></script>
+
+</body>
+</html>
